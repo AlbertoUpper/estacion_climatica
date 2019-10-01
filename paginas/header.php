@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="temperaturas diarias regitradas segun medidor de temperatura DHT11">    
-    <link rel="icon" type="" href="" />
+    <link rel="icon" type="image/png" href="multimedia/img/temper.png" />
     <title>Temperaturas</title>
 
     <!-- Bootstrap core CSS -->
