@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">    
 
     <!-- Custom styles for this template -->    
+     <script src="js/jquery.min.js"></script>   
     <link href="css/icomoon.css" rel="stylesheet">           
     <script src="js/pace.min.js"></script>    
     <style>
@@ -33,7 +34,7 @@
       top: 0;
       right: 100%;
       width: 100%;
-      height: 3px;
+      height: 4px;
     }
     </style>
     <script>
@@ -41,7 +42,7 @@
         $("body").niceScroll({
           cursorcolor:"#007dfd",
           cursorwidth:"7px",
-          cursorfixedheight: 270,
+          cursorfixedheight: 200,
           cursorborder: "1px solid aquamarine",
           cursorbordercolor: "#fff",
           cursorborderradius:2
