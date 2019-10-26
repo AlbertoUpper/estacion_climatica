@@ -14,6 +14,7 @@
      <script src="js/jquery.min.js"></script>   
     <link href="css/icomoon.css" rel="stylesheet">           
     <script src="js/pace.min.js"></script>    
+     
     <style>
     .pace {
       -webkit-pointer-events: none;
@@ -38,7 +39,8 @@
     }
     </style>
     <script>
-       $(function(){                            
+       $(function(){    
+       mostrarGrafica(10);                        
         $("body").niceScroll({
           cursorcolor:"#007dfd",
           cursorwidth:"7px",
@@ -47,6 +49,7 @@
           cursorbordercolor: "#fff",
           cursorborderradius:2
         });
+
        })
     </script>    
   </head>
@@ -61,9 +64,10 @@
 
     <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a class="nav-link <?php echo ($pagina == 'inicio') ? 'active' : ''; ?>" href="?p=inicio">Inicio <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link <?php echo ($pagina == 'inicio') ? 'active' : ''; ?>" href="?p=inicio2">Inicio <span class="sr-only">(current)</span></a>
         </li>                     
+        <li class="nav-item"><a class="nav-link <?php echo ($pagina == 'grafica') ? 'active' : ''; ?>" href="?p=grafica">Gráfica<span class="sr-only">(current)</span></a></li>
       </ul>
     </div>
     </nav>

@@ -1,15 +1,11 @@
-<?php 
-	require_once('conexion/conexion.php');
-	$conexion = conectar();
-	if (isset($_POST['fecha'])) {
-		$fechaa = $_POST['fecha'];
-		$fechatratada = date_format(date_create($fechaa),'d-M-Y');
-		$sql = "select * from temperaturasdiarias WHERE Date_format(HoraRegistro,'%Y-%m-%d') = '$fechaa' ";
-	}else{
-		$sql = "select * from temperaturasdiarias";
-	}	
-	$resultado = mysqli_query($conexion, $sql);
-?>
+<script>
+	$(function(){		
+		setInterval(function(){
+			var fechaForm = $('#fecha').val();
+			$("#tabla").load('paginas/php/cargarDatos.php?fecha='+fechaForm);
+		},2500);
+	});
+</script>
 <style>
 	table {
         width: 100%;
@@ -46,25 +42,7 @@ tbody td, thead th {
 						<th>Fecha / hora</th>		      
 				    </tr>
 				</thead>
-			    <tbody>			    	
-			    	<?php if(mysqli_num_rows($resultado) < 1): 
-			       		echo "<tr><td class='col-12 text-center'>No hay registro de temperaturas</td></tr>";
-			       	else:			       
-					while($temp = mysqli_fetch_array($resultado)):?>			       
-					<?php
-						$fecha = date_format(date_create($temp['HoraRegistro']), 'd-M-Y h:i A');
-					?>
-			        <tr>
-			        	<td><?= $temp['ID']; ?></td>
-			        	<td>&nbsp;&nbsp;&nbsp;&nbsp;<?= $temp['Temperatura']; ?></td>			        	
-			        	<td><?= $fecha; ?></td>
-			        </tr>
-					<?php
-					 
-					 endwhile;
-					 endif; 				
-					mysqli_close($conexion);			
-					?>
+			    <tbody id="tabla">			    				    	
 			    </tbody>
 			</table>
 		</div>		
@@ -82,7 +60,7 @@ tbody td, thead th {
 				<div class="w-100"></div>
 				<div class="col-md-12 border">
 					<h4>Datos de interes:</h4>
-					<div id="seccion"></div>
+					<div></div>
 				</div>
 			</div>
 		</div>
@@ -91,6 +69,6 @@ tbody td, thead th {
 <script>
 	$('#fecha').on('change', function(e){
 		
-		$('#formFecha').submit();
+		
 	})
 </script>
