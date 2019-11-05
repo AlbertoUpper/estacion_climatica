@@ -111,7 +111,7 @@ tbody td, thead th {
 						//sustitucion de a en ecuacion
 						$multiplicacion = $a * $dia;
 						$b = $prom['tempProm'] - $multiplicacion;
-						$prediccion = ($a * $maniana)+$b;
+						$prediccion = $a * $maniana + $b;
 						///////////////////////////////////////////////////////
 
 					?>
